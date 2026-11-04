@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stef | SAP ABAP & Fiori Developer | Software Engineer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sapBlue: '#0a6ed1',
+                        sapDarkBlue: '#00173a',
+                        sapLightBlue: '#e8f3ff',
+                        sapAccent: '#0070f3',
+                        lightBg: '#f8fafc',
+                        borderLight: '#e2e8f0'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+        }
+        .font-mono {
+            font-family: 'Fira Code', monospace;
+        }
+        .clean-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            transition: all 0.2s ease-in-out;
+        }
+        .clean-card:hover {
+            border-color: #0a6ed1;
+            box-shadow: 0 4px 20px -2px rgba(10, 110, 209, 0.08);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-800 bg-white">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-2.5 group">
+                <div class="w-8 h-8 rounded-lg bg-sapBlue text-white font-bold flex items-center justify-center font-mono text-base group-hover:bg-sapDarkBlue transition shadow-sm">
+                    S
+                </div>
+                <span class="font-bold text-slate-900 tracking-tight text-lg">ITSTEF</span>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                <a href="#profile" class="hover:text-sapBlue transition">Profile</a>
+                <a href="#experience" class="hover:text-sapBlue transition">Experience</a>
+                <a href="#certifications" class="hover:text-sapBlue transition">Certifications</a>
+                <a href="#awards" class="hover:text-sapBlue transition">Awards & Engagements</a>
+                <a href="#skills" class="hover:text-sapBlue transition">Skills</a>
+                <a href="https://www.linkedin.com/in/sc-stef" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-sapBlue text-white font-semibold text-xs hover:bg-sapDarkBlue transition flex items-center gap-1.5">
+                    <i class="fa-brands fa-linkedin text-sm"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </nav>
+
+            <button id="mobileMenuBtn" class="md:hidden text-slate-600 p-2" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-bars text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 text-sm">
+            <a href="#profile" class="block text-slate-600 hover:text-sapBlue py-1" onclick="toggleMobileMenu()">Profile</a>
+            <a href="#experience" class="block text-slate-600 hover:text-sapBlue py-1" onclick="toggleMobileMenu()">Experience</a>
+            <a href="#certifications" class="block text-slate-600 hover:text-sapBlue py-1" onclick="toggleMobileMenu()">Certifications</a>
+            <a href="#awards" class="block text-slate-600 hover:text-sapBlue py-1" onclick="toggleMobileMenu()">Awards & Engagements</a>
+            <a href="#skills" class="block text-slate-600 hover:text-sapBlue py-1" onclick="toggleMobileMenu()">Skills</a>
+            <a href="https://www.linkedin.com/in/sc-stef" target="_blank" rel="noopener noreferrer" class="block text-center py-2 rounded-lg bg-sapBlue text-white font-semibold" onclick="toggleMobileMenu()">LinkedIn Profile</a>
+        </div>
+    </header>
+
+    <!-- Hero / Profile Section -->
+    <section id="hero" class="py-12 md:py-16 max-w-6xl mx-auto px-4 sm:px-6 border-b border-slate-100">
+        <div class="max-w-3xl space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-sapLightBlue text-sapBlue font-mono text-xs font-semibold">
+                <span class="w-2 h-2 rounded-full bg-sapBlue animate-pulse"></span>
+                NCR, Philippines • SAP ABAP & Fiori Developer
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+                Stef
+            </h1>
+
+            <p id="profile" class="text-slate-600 text-base leading-relaxed pt-2">
+                SAP Developer with experience in SAP S/4HANA implementations, ECC-to-S/4HANA migrations, and SAP Fiori App Development. Adept at supporting diverse business areas including Finance, HCM, Supply Chain, and SAP Defense and Security across APAC and EMEA regions. Technical Focus: ABAP RAP (Managed and Unmanaged), CDS, UI5/Fiori Elements, Forms, Enhancements, Custom Fields and Logic, and Workflow.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 pt-4">
+                <a href="mailto:sc.stefc@gmail.com" class="px-5 py-2.5 rounded-lg bg-sapBlue text-white font-medium text-sm hover:bg-sapDarkBlue transition flex items-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Email Me</span>
+                </a>
+                <a href="https://www.linkedin.com/in/sc-stef" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-lg border border-slate-300 text-slate-700 font-medium text-sm hover:border-sapBlue hover:text-sapBlue transition flex items-center gap-2">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>LinkedIn Profile</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-14 max-w-6xl mx-auto px-4 sm:px-6 border-b border-slate-100">
+        <div class="mb-10">
+            <h2 class="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2.5">
+                <i class="fa-solid fa-briefcase text-sapBlue text-xl"></i>
+                <span>Experience</span>
+            </h2>
+            <p class="text-slate-500 text-sm mt-1">Enterprise SAP delivery & Web/App Development</p>
+        </div>
+
+        <div class="space-y-8">
+            <!-- Role 1: Accenture -->
+            <div class="clean-card p-6 sm:p-8">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-4 border-b border-slate-100">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900">Software Engineer | Digital Core - SAP</h3>
+                        <p class="text-sapBlue font-semibold text-sm">Accenture (APAC & EMEA)</p>
+                    </div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 font-mono text-xs font-medium w-fit">
+                        Feb 2026 – <span id="currentDateRole">Present</span>
+                    </span>
+                </div>
+                
+                <ul class="space-y-2.5 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li>Assigned to projects implementation, configuration, transformation, and hypercare.</li>
+                    <li>Developed Fiori Apps using ABAP RAP/CDS, Adobe Forms, Workflow, Custom logic, and Enhancements.</li>
+                    <li><strong class="text-slate-800">Projects:</strong> South32 - Horizon 3 (Australia), DLIS (UK).</li>
+                    <li><strong class="text-slate-800">Business Areas:</strong> Finance - Treasury, HCM, Supply Chain, and SAP Defense and Security.</li>
+                </ul>
+            </div>
+
+            <!-- Role 2: PwC SEAC -->
+            <div class="clean-card p-6 sm:p-8">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-4 border-b border-slate-100">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900">SAP Technical Consultant</h3>
+                        <p class="text-sapBlue font-semibold text-sm">PwC Southeast Asia Consulting (SEAC)</p>
+                    </div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 font-mono text-xs font-medium w-fit">
+                        Jan 2025 – Feb 2026
+                    </span>
+                </div>
+                
+                <ul class="space-y-2.5 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li>Contributed to SAP configuration, implementation and hypercare using custom logic and field creation, OO ABAP, RAP, UI5/Fiori Elements, enhancements, and Adobe Forms.</li>
+                    <li>Estimated effort for SAP objects, prepared project work plans and technical specifications, and managed deliverables to meet milestones.</li>
+                    <li>Recognized with positive feedback with clients and senior managers for problem-solving skills, applying complex technical solutions, and consistent delivery of quality outputs.</li>
+                    <li><strong class="text-slate-800">Projects:</strong> Aesen - MEO (Singapore), PTTGC - Project Smile (Thailand).</li>
+                    <li><strong class="text-slate-800">Industries:</strong> Banking and Finance, Logistics, Oil and Energy.</li>
+                    <li><strong class="text-slate-800">Modules:</strong> FICO, SD, PP, and MM.</li>
+                </ul>
+            </div>
+
+            <!-- Role 3: Freelance Web Developer -->
+            <div class="clean-card p-6 sm:p-8">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-4 border-b border-slate-100">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900">Web Developer</h3>
+                        <p class="text-sapBlue font-semibold text-sm">Freelance</p>
+                    </div>
+                    <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 font-mono text-xs font-medium w-fit">
+                        Nov 2019 – May 2022
+                    </span>
+                </div>
+                
+                <ul class="space-y-2.5 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li>Designed and developed dynamic and scalable applications for clients with payment gateways and content management that increased client acquisitions.</li>
+                    <li><strong class="text-slate-800">Projects:</strong> Cargo Tracking System, Rental Systems, Employee and Clinic Management System, Event and Reservation Systems.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- IT Certifications Section -->
+    <section id="certifications" class="py-14 max-w-6xl mx-auto px-4 sm:px-6 border-b border-slate-100">
+        <div class="mb-10">
+            <h2 class="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2.5">
+                <i class="fa-solid fa-certificate text-sapBlue text-xl"></i>
+                <span>IT Certifications</span>
+            </h2>
+            <p class="text-slate-500 text-sm mt-1">Verified SAP & Technical Credentials</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="clean-card p-5 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-sapLightBlue text-sapBlue flex items-center justify-center shrink-0 font-bold text-lg">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">SAP Certified Back-End Developer</h3>
+                    <p class="text-sapBlue font-semibold text-xs mt-0.5">ABAP Cloud</p>
+                </div>
+            </div>
+
+            <div class="clean-card p-5 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-sapLightBlue text-sapBlue flex items-center justify-center shrink-0 font-bold text-lg">
+                    <i class="fa-solid fa-desktop"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">SAP Certified Fiori Application Developer</h3>
+                    <p class="text-slate-500 text-xs mt-0.5">SAP UI5 & Fiori Elements</p>
+                </div>
+            </div>
+
+            <div class="clean-card p-5 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-sapLightBlue text-sapBlue flex items-center justify-center shrink-0 font-bold text-lg">
+                    <i class="fa-solid fa-tasks"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">SAP Certified Activate Project Manager</h3>
+                    <p class="text-slate-500 text-xs mt-0.5">SAP Implementation Methodology</p>
+                </div>
+            </div>
+
+            <div class="clean-card p-5 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-sapLightBlue text-sapBlue flex items-center justify-center shrink-0 font-bold text-lg">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Data Analyst Certified</h3>
+                    <p class="text-slate-500 text-xs mt-0.5">Data Analytics & Modeling</p>
+                </div>
+            </div>
+
+            <div class="clean-card p-5 flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-sapLightBlue text-sapBlue flex items-center justify-center shrink-0 font-bold text-lg">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">SAP Generative AI Developer</h3>
+                    <p class="text-slate-500 text-xs mt-0.5">Generative AI Core Integration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards, Publications & Engagements -->
+    <section id="awards" class="py-14 max-w-6xl mx-auto px-4 sm:px-6 border-b border-slate-100">
+        <div class="mb-10">
+            <h2 class="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2.5">
+                <i class="fa-solid fa-trophy text-sapBlue text-xl"></i>
+                <span>Awards, Publications & Engagements</span>
+            </h2>
+            <p class="text-slate-500 text-sm mt-1">Recognitions, copyright publications, and community keynotes</p>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Award 1 -->
+            <div class="clean-card p-6">
+                <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+                    <h3 class="font-bold text-slate-900 text-base">
+                        Regional Finalist and National Champion (PH) — ASEAN Data Science Explorers (2024)
+                    </h3>
+                    <span class="text-sapBlue font-semibold text-xs whitespace-nowrap">ASEAN Foundation and SAP</span>
+                </div>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Top 10 out of 400+ entries in ASEAN countries. ASEAN DSE is a regional competition in ASEAN, using SAP Analytics Cloud and SAP Build to deliver data-driven, innovative, and feasible solutions and recommendations which can address pressing social and economic issues in ASEAN across the United Nations Sustainable Development Goals.
+                </p>
+            </div>
+
+            <!-- Award 2 -->
+            <div class="clean-card p-6">
+                <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+                    <h3 class="font-bold text-slate-900 text-base">
+                        APJ Representative and National Champion (PH) — ERPsim Competition 2022 & 2023
+                    </h3>
+                    <span class="text-sapBlue font-semibold text-xs whitespace-nowrap">HEC Montreal and SAP University</span>
+                </div>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    ERPsim is a business simulation competition for SAP ERP and SAP S/4HANA in which users use a real ERP system to learn about strategic business strategy, explore ERP system functionality and manage a virtual company in a competitive market.
+                </p>
+            </div>
+
+            <!-- Publication -->
+            <div class="clean-card p-6">
+                <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+                    <h3 class="font-bold text-slate-900 text-base">
+                        Project Alertrash (IPOPHL: 2025-01840-N-TCCR Category N: Computer Programs)
+                    </h3>
+                    <span class="text-sapBlue font-semibold text-xs sm:text-right break-words max-w-full sm:max-w-xs">3rd International Conference on Information and Computing Research</span>
+                </div>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    A reporting application with geo-tagging feature, designed to help users report waste-related violations and supports the adoption of zero-waste practices.
+                </p>
+            </div>
+
+            <!-- Engagement 1 -->
+            <div class="clean-card p-6">
+                <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+                    <h3 class="font-bold text-slate-900 text-base">
+                        ASEAN Leaders' Forum, ASEAN 2026 (Nov 2026 - Philippines)
+                    </h3>
+                    <span class="text-sapBlue font-semibold text-xs whitespace-nowrap">ASEAN Leaders' Forum</span>
+                </div>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Speaker for the sharing session at ASEAN Leaders' Forum.
+                </p>
+            </div>
+
+            <!-- Engagement 2 -->
+            <div class="clean-card p-6">
+                <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-2">
+                    <h3 class="font-bold text-slate-900 text-base">
+                        Master Trainer, SAP Analytics Cloud, ASEAN Foundation and SAP, ASEAN 2025 (May 2025 - Malaysia)
+                    </h3>
+                    <span class="text-sapBlue font-semibold text-xs whitespace-nowrap">ASEAN Foundation & SAP</span>
+                </div>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Led an enablement session on data analytics using SAP tools, trained over 100 participants. In partnership with the ASEAN Foundation, SAP, and Kolej Tingkatan Enam (Pra-Universiti) Tun Fatimah (KTETF) of Malaysia, this session was part of the ASEAN 2025 and ASEAN Data Science Explorers program aimed at empowering underserved youth aged 15 to 30.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-14 max-w-6xl mx-auto px-4 sm:px-6 border-b border-slate-100">
+        <div class="mb-10">
+            <h2 class="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2.5">
+                <i class="fa-solid fa-layer-group text-sapBlue text-xl"></i>
+                <span>Technical Skills & Tools</span>
+            </h2>
+            <p class="text-slate-500 text-sm mt-1">Core technical stack, platforms, and spoken languages</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- SAP Focus -->
+            <div class="clean-card p-5 space-y-3">
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-cubes text-sapBlue"></i>
+                    <span>SAP Technical Focus</span>
+                </h3>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">ABAP RAP</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">CDS Views</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">SAPUI5</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">Fiori Elements</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">Adobe Forms</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">Enhancements</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">Workflow</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">Custom Fields & Logic</span>
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="clean-card p-5 space-y-3">
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-code text-sapBlue"></i>
+                    <span>Tech Stack</span>
+                </h3>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">Java</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">Python</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">JavaScript</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">C variants</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">PHP Laravel</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">Angular</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">Android</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">SQL / PostgreSQL</span>
+                </div>
+            </div>
+
+            <!-- Tools & Apps -->
+            <div class="clean-card p-5 space-y-3">
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-wrench text-sapBlue"></i>
+                    <span>Tools & Apps</span>
+                </h3>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">Microsoft Access</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">Excel</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">PowerBI</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">Visio</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">MS Project</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">Photoshop</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">Premiere</span>
+                    <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-mono">Illustrator</span>
+                </div>
+            </div>
+
+            <!-- Other Skills & Languages -->
+            <div class="clean-card p-5 space-y-3">
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-language text-sapBlue"></i>
+                    <span>Languages & Other</span>
+                </h3>
+                <div class="space-y-2">
+                    <div>
+                        <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Languages</p>
+                        <p class="text-xs text-slate-700 font-medium">Filipino, English, German, Spanish</p>
+                    </div>
+                    <div>
+                        <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Other Skills</p>
+                        <p class="text-xs text-slate-700 font-medium">Technical Support, Data Visualization, R&D, Project and Team Management</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Let's Connect Footer -->
+    <footer id="contact" class="py-14 max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="clean-card p-8 sm:p-10 bg-slate-900 text-white border-none flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div class="space-y-2 max-w-xl">
+                <h2 class="text-2xl font-bold tracking-tight">Let's Connect!</h2>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Interested in discussing SAP implementations, ABAP RAP development, custom Fiori solutions, or collaboration opportunities? Feel free to reach out directly.
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-3">
+                <a href="mailto:sc.stefc@gmail.com" class="px-5 py-2.5 rounded-lg bg-sapBlue text-white font-medium text-sm hover:bg-sapAccent transition flex items-center gap-2 shadow-sm whitespace-nowrap">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>sc.stefc@gmail.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/sc-stef" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-lg border border-slate-700 text-slate-300 font-medium text-sm hover:border-slate-500 hover:text-white transition flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>LinkedIn Profile</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center text-xs text-slate-400 font-mono">
+            &copy; ITSTEF. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Dynamically append current month & year to ongoing role
+        window.addEventListener('DOMContentLoaded', () => {
+            const dateSpan = document.getElementById('currentDateRole');
+            if (dateSpan) {
+                const now = new Date();
+                const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                const currentMonth = monthNames[now.getMonth()];
+                const currentYear = now.getFullYear();
+                dateSpan.textContent = `Present (${currentMonth} ${currentYear})`;
+            }
+        });
+    </script>
+</body>
+</html>
